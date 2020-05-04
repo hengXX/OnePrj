@@ -1,0 +1,41 @@
+<!--pages/forum/forum.wxml-->
+<view class="container">
+  <!--header-->
+  <view class="header-box">
+    <view class="header-box-left">小区名：光明小区</view>
+    <view class="header-box-right">发布</view>
+  </view>
+  <!--tabbar-->
+  <view class="tabbar-box">
+    <tui-tabs tabs="{{navbar}}" currentTab="{{currentTab>1?0:currentTab}}" bind:change="change" itemWidth="50%"></tui-tabs>
+  </view>
+  <!--content-->
+  <view class="content-box">
+    <block wx:for="{{fornumList}}" wx:key="{{index}}">
+      <template is="fornumItem" data="{{item,index:index}}" />
+    </block>
+  </view>
+
+
+
+
+  <!--模板-->
+  <template name="fornumItem">
+    <!--圈子-->
+    <view class="content-item content-flex-list" hover-class="hover" hover-start-time="150" bindtap="detail">
+      <!--头像-->
+      <image src="../../static/images/mall/product/{{item.img}}.jpg" class="content-pro-img content-proimg-list" mode="widthFix" />
+      <view class="content-pro-cont">
+        <!--内容-->
+        <view class="content-pro-tit">{{item.content}}</view>
+        <!--点赞   评论-->
+        <view class="content-pro-review">
+          <text class="content-pro-like">点赞：{{item.like}}</text>
+          <text class="content-pro-comment">评论：{{item.comment}}</text>
+        </view>
+      </view>
+    </view>
+    <!--圈子-->
+  </template>
+  <!--模板-->
+</view>

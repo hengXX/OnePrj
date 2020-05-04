@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/nearbyshops/nearbyshops",
+    "pages/logs/logs",
+    "pages/shopsdetails/shopsdetails",
+    "pages/my/my",
+    "pages/forum/forum",
+    "pages/publish/publish"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#1e77f7",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/nearbyshops/nearbyshops",
+        "text": "附近的店",
+        "iconPath": "static/images/tabbar/shops_gray.png",
+        "selectedIconPath": "static/images/tabbar/shops_active.png"
+      },
+      {
+        "pagePath": "pages/forum/forum",
+        "text": "圈子",
+        "iconPath": "static/images/tabbar/group_gray.png",
+        "selectedIconPath": "static/images/tabbar/group_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/images/tabbar/my_gray.png",
+        "selectedIconPath": "static/images/tabbar/my_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
