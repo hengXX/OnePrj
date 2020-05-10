@@ -69,8 +69,29 @@ Page({
       content: "亲爱的麻辣烫（阿斯顿撒）",
       like: 20,
       comment: 30
-    }
+    }],
+    communityList: [
+      {
+        id: 0,
+        name: '光明小区'
+      },
+      {
+        id: 1,
+        name: '龙光熙园'
+      },
+      {
+        id: 2,
+        name: '龙光嘉园'
+      },
+      {
+        id: 3,
+        name: '苑'
+      }
     ],
+    communityIndex: 0,
+    pageIndex: 1,
+    loadding: false,
+    pullUpOn: true
   },
 
   /**
@@ -128,10 +149,51 @@ Page({
   onShareAppMessage: function () {
 
   },
+  onReachBottom: function () {
+    if (!this.data.pullUpOn) return;
+    this.setData({
+      loadding: true
+    }, () => {
+      if (this.data.pageIndex == 4) {
+        this.setData({
+          loadding: false,
+          pullUpOn: false
+        })
+      } else {
+        let loadData = JSON.parse(JSON.stringify(this.data.fornumList));
+        loadData = loadData.splice(0, 10)
+        if (this.data.pageIndex == 1) {
+          loadData = loadData.reverse();
+        }
+        this.setData({
+          fornumList: this.data.fornumList.concat(loadData),
+          pageIndex: this.data.pageIndex + 1,
+          loadding: false
+        })
+      }
+    })
+  },
   change(e) {
-    console.log(e.detail.index);
     this.setData({
       currentTab: e.detail.index
     })
+  },
+  detail(e) {
+    console.log(e);
+    wx.navigateTo({
+      url: "/pages/forumdetails/forumdetails"
+    })
+  },
+  publish(){
+    //把小区ID带过去
+    wx.navigateTo({
+      url: "/pages/publish/publish?source=pub&id=" + this.data.communityList[this.data.communityIndex].id
+    })
+  },
+  bindPickerChange: function (e) {
+    this.setData({
+      communityIndex: e.detail.value
+    })
+    //接口  切换小区
   },
 })

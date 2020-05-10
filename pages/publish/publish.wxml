@@ -1,2 +1,20 @@
 <!--pages/publish/publish.wxml-->
-<text>pages/publish/publish.wxml</text>
+<view class="container">
+  <view class="tui-cells">
+    <textarea class="tui-textarea" name="desc" placeholder="{{textareapla}}" maxlength="800" placeholder-class="tui-phcolor-color" value="{{textarea}}" bindinput="textarea" auto-focus/>
+    <view class="tui-textarea-counter">0/800</view>
+  </view>
+  <view class="tui-select" wx:if="{{source=='pub'}}">
+    <radio-group class="radio-group" name="sex">
+      <label class="tui-radio">
+        <radio value="1" color="#5677fc" checked="true" />大声公
+      </label>
+      <label class="tui-radio">
+        <radio value="2" color="#5677fc" />悄悄话
+      </label>
+    </radio-group>
+  </view>
+  <view class="tui-cmt-btn">
+    <tui-button bindtap="publish">{{btntext}}</tui-button>
+  </view>
+</view>

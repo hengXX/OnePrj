@@ -1,0 +1,7 @@
+{
+  "backgroundColorTop": "#5677FC",
+  "navigationBarTitleText": "消息",
+  "usingComponents": {
+    "tui-nomore": "../../components/nomore/nomore"
+  }
+}

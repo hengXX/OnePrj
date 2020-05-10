@@ -1,0 +1,11 @@
+<!--pages/business/business.wxml-->
+<view class='container'>
+  <view class="user-info">
+    <view class="avatarUrl">
+      <image class='avatar-img' src='../../static/images/my/mine_def_touxiang_3x.png'></image>
+    </view>
+    <view class="phoneCall">
+      <text>13715961989</text>
+    </view>
+  </view>
+</view>

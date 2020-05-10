@@ -13,77 +13,80 @@ Page({
     }, {
       name: "居家"
     }],
-    productList: [{
+    shopsList: [{
       img: 1,
       name: "亲爱的麻辣烫（阿斯顿撒）",
-      sale: "是否外送：是",
-      factory: "营业时间：10:00-21:00",
-      payNum: "联系电话：13715961989"
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 2,
       name: "亲爱的麻辣烫（阿斯顿撒）",
-      sale: "是否外送：否",
-      factory: "营业时间：10:00-21:00",
-      payNum: "联系电话：13715961989"
+      delivery: "否",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 3,
       name: "亲爱的麻辣烫（阿斯顿撒）",
-      sale: "是否外送：是",
-      factory: "营业时间：10:00-21:00",
-      payNum: "联系电话：13715961989"
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 4,
       name: "亲爱的麻辣烫（阿斯顿撒）",
-      sale: "是否外送：否",
-      factory: "营业时间：10:00-21:00",
-      payNum: "联系电话：13715961989"
+      delivery: "否",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 5,
       name: "百草味 肉干肉脯 休闲零食 靖江精制猪肉脯200g/袋",
-      sale: 599,
-      factory: 899,
-      payNum: 2399
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 6,
       name: "短袖睡衣女夏季薄款休闲家居服短裤套装女可爱韩版清新学生两件套 短袖粉色长颈鹿 M码75-95斤",
-      sale: 599,
-      factory: 899,
-      payNum: 2399
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 1,
       name: "欧莱雅（LOREAL）奇焕光彩粉嫩透亮修颜霜",
-      sale: 599,
-      factory: 899,
-      payNum: 2342
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 2,
       name: "德国DMK进口牛奶",
-      sale: 29,
-      factory: 69,
-      payNum: 999
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 3,
       name: "【第2支1元】柔色尽情丝柔口红唇膏女士不易掉色保湿滋润防水 珊瑚红",
-      sale: 299,
-      factory: 699,
-      payNum: 666
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     },
     {
       img: 4,
       name: "百雀羚套装女补水保湿护肤品",
-      sale: 1599,
-      factory: 2899,
-      payNum: 236
+      delivery: "是",
+      businesstime: "10:00-21:00",
+      phonecall: "13715961989"
     }
     ],
+    pageIndex: 1,
+    loadding: false,
+    pullUpOn: true
   },
 
   /**
@@ -129,27 +132,53 @@ Page({
   },
 
   /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
   },
+  onReachBottom: function () {
+    if (!this.data.pullUpOn) return;
+    this.setData({
+      loadding: true
+    }, () => {
+      if (this.data.pageIndex == 4) {
+        this.setData({
+          loadding: false,
+          pullUpOn: false
+        })
+      } else {
+        let loadData = JSON.parse(JSON.stringify(this.data.shopsList));
+        loadData = loadData.splice(0, 10)
+        if (this.data.pageIndex == 1) {
+          loadData = loadData.reverse();
+        }
+        this.setData({
+          shopsList: this.data.shopsList.concat(loadData),
+          pageIndex: this.data.pageIndex + 1,
+          loadding: false
+        })
+      }
+    })
+  },
   change(e) {
-    console.log(e.detail.index);
     this.setData({
       currentTab: e.detail.index
     })
   },
-  goNavBar() {
+  phoneCall(e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phone //仅为示例，并非真实的电话号码
+    })
+  },
+  detail() {
     wx.navigateTo({
-      url: "/pages/navbar-1/navbar-1"
+      url: "/pages/shopsdetails/shopsdetails"
+    })
+  },
+  search() {
+    wx.navigateTo({
+      url: "/pages/search/search"
     })
   } 
 })

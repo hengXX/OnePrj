@@ -1,2 +1,60 @@
 <!--pages/shopsdetails/shopsdetails.wxml-->
-<text>pages/shopsdetails/shopsdetails.wxml</text>
+<view class="container">
+  <!--search-->
+  <view class="search-box">
+    <view class="tui-rolling-search">
+      <icon type="search" size='13' color='#999'></icon>
+      <swiper vertical="{{true}}" autoplay="{{true}}" circular="{{true}}" interval="8000" class="tui-swiper">
+        <swiper-item wx:for="{{hotSearch}}" wx:key="{{index}}" class="tui-swiper-item" bindtap="search">
+          <view class="tui-hot-item">{{item}}</view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+  <!--店铺信息-->
+  <view class="shops-content">
+    <image src="../../static/images/mall/product/1.jpg" class="shops-img"></image>
+    <view class="shops-info">
+      <view class="shops-name">店名：日常生活用品</view>
+      <view class="shops-businesstime">经营时间：10:00-21:00</view>
+      <view class="shops-info-view">联系号码：13715961989</view>
+      <view class="shops-info-view">是否外送：有</view>
+    </view>
+  </view>
+  <view class="shops-address">
+    地址：长江路160号长江路160号长江路160号长江路160号长江路160号长江路160号
+  </view>
+  <view class="content-box">
+    <!--商品信息-->
+    <!-- <view class="content-tit">售品：</view> -->
+    <view class="content-list">
+      <view class="goods-list">
+        <view class="goods-container">
+          <block wx:for="{{goosList}}" wx:key="{{index}}" wx:if="{{(index+1)%2!=0}}">
+            <template is="goodsItem" data="{{item,index:index}}" />
+          </block>
+        </view>
+        <view class="goods-container">
+          <block wx:for="{{goosList}}" wx:key="{{index}}" wx:if="{{(index+1)%2==0}}">
+            <template is="goodsItem" data="{{item,index:index}}" />
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!--模板-->
+  <template name="goodsItem">
+    <!--商品列表-->
+    <view class="goods-item" hover-class="hover" hover-start-time="150" bindtap="detail">
+      <image src="../../static/images/mall/product/{{item.goodsImg}}.jpg" class="goods-img" mode="widthFix" />
+      <view class="goods-info">
+        <view class="goods-name">{{item.goodsName}}</view>
+        <view class="goods-price">{{item.goodsPrice}}元/{{item.goodsUnit}}</view>
+      </view>
+    </view>
+    <!--商品列表-->
+  </template>
+</view>

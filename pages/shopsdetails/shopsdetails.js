@@ -5,7 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goosList:[
+      {
+        goodsImg: 5,
+        goodsName: "可乐",
+        goodsPrice: 3,
+        goodsUnit: "瓶"
+      },
+      {
+        goodsImg: 1,
+        goodsName: "大米",
+        goodsPrice: 50,
+        goodsUnit: "袋"
+      },
+      {
+        goodsImg: 2,
+        goodsName: "雪花啤酒",
+        goodsPrice: 5,
+        goodsUnit: "瓶"
+      },
+      {
+        goodsImg: 3,
+        goodsName: "纯牛奶",
+        goodsPrice: 45,
+        goodsUnit: "箱"
+      },
+      {
+        goodsImg: 4,
+        goodsName: "七喜",
+        goodsPrice: 3,
+        goodsUnit: "瓶"
+      },
+    ]
   },
 
   /**

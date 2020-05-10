@@ -5,7 +5,12 @@
     "pages/shopsdetails/shopsdetails",
     "pages/my/my",
     "pages/forum/forum",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/search/search",
+    "pages/forumdetails/forumdetails",
+    "pages/message/message",
+    "pages/myforum/myforum",
+    "pages/business/business"
   ],
   "window": {
     "backgroundTextStyle": "light",

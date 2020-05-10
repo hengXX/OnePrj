@@ -2,45 +2,43 @@
 <view class='container'>
   <view class='top-container'>
     <image class='bg-img' src='../../static/images/my/mine_bg_3x.png'></image>
-    <view hidden='{{!isLogin}}' class='user-wrapper'>
+    <view wx:if='{{!isLogin}}' class='user-wrapper'>
       <navigator url='../login/login' hover-class="opcity" hover-stay-time="150" class='user'>
         <image class='avatar-img' src='../../static/images/my/mine_def_touxiang_3x.png'></image>
         <text class='user-info'>请登录</text>
       </navigator>
     </view>
-    <view hidden='{{isLogin}}' class='user'>
-      <image class='avatar-img' src='../../static/images/my/mine_def_touxiang_3x.png'></image>
+    <view wx:if='{{isLogin}}' class='user'>
+      <image class='avatar-img' src='{{avatarUrl}}'></image>
       <view class='user-info'>
-        <text>夜空中最亮的星</text>
+        <text>{{nickName}}</text>
         <view class='edit-img' hover-class="opcity" hover-stay-time="150" bindtap="edit">
           <image src='../../static/images/my/mine_icon_bianji_3x.png'></image>
         </view>
       </view>
-      <view class='user-info'>
-        <text>13715961989</text>
+      <view class='user-info' bindtap="authorizePhoneCall">
+        <text>{{phonecall}}</text>
       </view>
     </view>
   </view>
 
   <view class='middle-container'>
     <tui-list-cell arrow="{{true}}" right="50rpx !important" padding="0" lineLeft="{{false}}" bind:click="href" data-type="4">
-      <view data-url='../myWashTicket/myWashTicket' bindtap='tapEvent' data-index="1" class='middle-item' hover-class="opcity" hover-stay-time="150">
+      <view bindtap='forum' data-index="1" class='middle-item' hover-class="opcity" hover-stay-time="150">
         <image class='ticket-img' src='../../static/images/my/group.png'></image>
-        <!--thorui-->
         <text class='middle-tag'>圈子发布</text>
       </view>
     </tui-list-cell>
     <view class="line"></view>
     <tui-list-cell arrow="{{true}}" right="50rpx !important" padding="0" lineLeft="{{false}}" bind:click="href" data-type="4">
-      <view bindtap='github' class='middle-item' hover-class="opcity" hover-stay-time="150">
+      <view bindtap='message' class='middle-item' hover-class="opcity" hover-stay-time="150">
         <image class='ticket-img' src='../../static/images/my/message.png'></image>
-        <!--github_3x-->
         <text class='middle-tag'>消息</text>
       </view>
     </tui-list-cell>
     <view class="line"></view>
     <tui-list-cell arrow="{{true}}" right="50rpx !important" padding="0" lineLeft="{{false}}" bind:click="href" data-type="4">
-      <view bindtap='github' class='middle-item' hover-class="opcity" hover-stay-time="150">
+      <view bindtap='business' class='middle-item' hover-class="opcity" hover-stay-time="150">
         <image class='ticket-img' src='../../static/images/my/business.png'></image>
         <!--github_3x-->
         <text class='middle-tag'>商务合作</text>

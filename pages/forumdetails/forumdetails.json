@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "圈子详情",
+  "backgroundColorTop": "#fff",
+  "backgroundColorBottom": "#fff",
+  "onReachBottomDistance": 0,
+  "usingComponents": {
+    "tui-icon": "../../components/icon/icon",
+    "tui-tag": "../../components/tag/tag",
+    "tui-badge": "../../components/badge/badge"
+  }
+}

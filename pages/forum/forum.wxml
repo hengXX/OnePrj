@@ -2,8 +2,14 @@
 <view class="container">
   <!--header-->
   <view class="header-box">
-    <view class="header-box-left">小区名：光明小区</view>
-    <view class="header-box-right">发布</view>
+    <view class="header-box-left">
+      <picker bindchange="bindPickerChange" value="{{communityIndex}}" range-key="name" range="{{communityList}}">
+        <view class="picker">
+          小区名：{{communityList[communityIndex].name}}
+        </view>
+      </picker>
+    </view>
+    <view class="header-box-right" bindtap="publish">发布</view>
   </view>
   <!--tabbar-->
   <view class="tabbar-box">
@@ -21,7 +27,6 @@
 
   <!--模板-->
   <template name="fornumItem">
-    <!--圈子-->
     <view class="content-item content-flex-list" hover-class="hover" hover-start-time="150" bindtap="detail">
       <!--头像-->
       <image src="../../static/images/mall/product/{{item.img}}.jpg" class="content-pro-img content-proimg-list" mode="widthFix" />
@@ -35,7 +40,10 @@
         </view>
       </view>
     </view>
-    <!--圈子-->
   </template>
   <!--模板-->
+
+  <!--加载loadding-->
+  <tui-nomore visible="{{!pullUpOn}}" bgcolor="#f7f7f7"></tui-nomore>
+  <!--加载loadding-->
 </view>

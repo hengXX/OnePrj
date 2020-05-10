@@ -76,9 +76,45 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "圈子",
-					"pathName": "pages/forum/forum",
+					"pathName": "pages/myforum/myforum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "发布",
+					"pathName": "pages/publish/publish",
+					"query": "source =cmt",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "圈子详情",
+					"pathName": "pages/forumdetails/forumdetails",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/message/message",
+					"query": "source =cmt",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商务合作",
+					"pathName": "pages/business/business",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -3,6 +3,7 @@
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
   "usingComponents": {
-    "tui-tabs": "../../components/tui-tabs/tui-tabs"
+    "tui-tabs": "../../components/tui-tabs/tui-tabs",
+    "tui-nomore": "../../components/nomore/nomore"
   }
 }

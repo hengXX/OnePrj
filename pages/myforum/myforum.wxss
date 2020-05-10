@@ -1,0 +1,83 @@
+/* pages/myforum.wxss */
+
+.tabbar-box{
+  width: 100%;
+  position: fixed;
+  top: 0rpx;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+}
+
+/*圈子内容*/
+
+.content-box {
+  margin-top: 84rpx;
+}
+
+.content-item {
+  width: 100%;
+  margin-bottom: 10rpx;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  overflow: hidden;
+  transition: all 0.15s ease-in-out;
+}
+
+.content-flex-list {
+  display: flex;
+  margin-bottom: 5rpx !important;
+}
+
+.content-pro-img {
+  width: 100%;
+  display: block;
+}
+
+.content-proimg-list {
+  width: 230rpx !important;
+  height: 170rpx !important;
+  flex-shrink: 0;
+  border-radius: 12rpx;
+  margin: auto 0;
+}
+
+.content-pro-cont {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.content-pro-tit {
+  color: #2e2e2e;
+  font-size: 29rpx;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /*内容显示行数*/
+}
+
+.content-pro-review {
+  padding-top: 18rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-pro-like {
+  font-size: 26rpx;
+  color: #a0a0a0;
+}
+
+.content-pro-comment {
+  font-size: 24rpx;
+  color: #a0a0a0;
+  padding-left: 12rpx;
+}

@@ -1,1 +1,183 @@
 /* pages/shopsdetails/shopsdetails.wxss */
+
+page {
+  background: #fff !important;
+}
+
+.search-box {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 99;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.tui-rolling-search {
+  width: 100%;
+  height: 60rpx;
+  border-radius: 35rpx;
+  padding: 0 40rpx 0 30rpx;
+  box-sizing: border-box;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: #999;
+}
+
+/*商品*/
+
+.shops-img {
+  width: 260rpx !important;
+  height: 170rpx !important;
+  flex-shrink: 0;
+  border-radius: 12rpx;
+  margin: auto 0;
+  display: block;
+}
+
+.shops-content {
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.15s ease-in-out;
+  position: fixed;
+  top: 98rpx;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+  display: flex;
+  padding: 0 15rpx;
+  padding-bottom: 20rpx;
+  background: #fff;
+}
+
+.shops-info {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.shops-name {
+  color: #2e2e2e;
+  font-size: 29rpx;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.shops-businesstime {
+  font-size: 24rpx;
+  padding-top: 15rpx;
+  color: #a0a0a0;
+}
+
+.shops-info-view {
+  font-size: 24rpx;
+  padding-top: 7rpx;
+  color: #a0a0a0;
+}
+
+.shops-address {
+  position: fixed;
+  top: 313rpx;
+  left: 0;
+  z-index: 99;
+  overflow: hidden;
+  font-size: 25rpx;
+  color: #2e2e2e;
+  background: #fff;
+  padding: 30rpx 15rpx;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-box {
+  width: 100%;
+  margin-top: 420rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.content-tit {
+  padding: 11px 0 5px 15rpx;
+  width: 100%;
+}
+
+.content-list {
+  width: 100%;
+  padding: 25rpx 0rpx 25rpx 15rpx;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.content-item {
+  width: 50%;
+  float: left;
+  padding: 15rpx 0;
+}
+
+.goods-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.goods-container {
+  flex: 1;
+  margin-right: 2%;
+}
+
+.goods-item {
+  width: 100%;
+  margin-bottom: 4%;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.goods-img {
+  width: 100%;
+  display: block;
+}
+
+.goods-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.goods-name {
+  color: #2e2e2e;
+  font-size: 30rpx;
+}
+
+.goods-price {
+  color: #2e2e2e;
+  font-size: 26rpx;
+}
+
+/* 分割 */
+
+.line {
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin-top: 30rpx;
+}

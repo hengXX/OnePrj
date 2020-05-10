@@ -21,7 +21,6 @@
 .user-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 102rpx;
 }
 
 .user {
@@ -32,8 +31,8 @@
 }
 
 .avatar-img {
-  width: 160rpx;
-  height: 160rpx;
+  width: 160rpx !important;
+  height: 160rpx !important;
   border-radius: 50%;
   align-self: center;
 }

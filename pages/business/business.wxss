@@ -1,0 +1,20 @@
+/* pages/business/business.wxss */
+
+.container {
+  position: relative;
+}
+
+.user-info {
+  height: 440rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.avatar-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  align-self: center;
+}

@@ -1,0 +1,65 @@
+<!--pages/forumdetails/forumdetails.wxml-->
+<view class="container">
+  <view class="forum-info">
+    <text>发布者：小明</text>
+    <text>2019-10-01</text>
+  </view>
+
+  <view class="forum-title">
+    这是一场很重要的比赛，武汉卓尔在中超目前打的还是不错的，现在积分与我们一样。我们面对这个对手做了充分的准备，他们的战术变化很多，我也认为他们是一支训练有素的队伍。虽然这是一场艰难的比赛，我们也充满了动力去拿到我们想要的分数，实现我们的目标。联赛上半程还有两场比赛，我们也会竭尽全力拿到尽量多的分数。
+  </view>
+
+  <view class="operate-box">
+    <tui-tag type="{{isFabulous?'':'gray'}}" shape="circle" plain="{{true}}" tui-tag-class="tui-tag-class" bind:click="btnFabulous">
+      <tui-icon name="{{isFabulous?'agree-fill':'agree'}}" size="20" color="{{isFabulous?'#5677fc':'#333'}}"></tui-icon>
+      <text class="tui-black {{isFabulous?'tui-primary':''}}">{{fabulous}}赞</text>
+    </tui-tag>
+    <button open-type="share" class="tui-share-btn">
+      <tui-tag type="gray" shape="circle" plain="{{true}}" tui-tag-class="tui-tag-class">
+        <tui-icon name="partake" size="20" color="#333"></tui-icon>
+        <text class="tui-black">分享</text>
+      </tui-tag>
+    </button>
+  </view>
+
+  <view class="forum-cmt-title">点赞</view>
+  <view class="forum-like">
+    <tui-icon name="agree-fill" size="15" color="#5677fc"></tui-icon>
+    <text class="">小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明，小明</text>
+  </view>
+  <view class="forum-cmt-title">评论</view>
+  
+  <view class="tui-cmtbox">
+    <view class="tui-cmt-cell" wx:for="{{cmtList}}" wx:key="{{index}}">
+      <image src="../../static/images/news/{{item.avatar}}" class="tui-avatar"></image>
+      <view class="tui-cmt-detail">
+        <view class="tui-header-box">
+          <view class="tui-cmt-nickname">{{item.nickname}}</view>
+        </view>
+        <view class="tui-cmt-content">
+          {{item.content}}
+        </view>
+        <view class="tui-footer">
+          {{item.time}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+  <view class="tui-operation">
+    <view class="tui-operation-left tui-col-7 tui-height-full tui-ptop-zero">
+      <view class="tui-btn-comment" bindtap="btnCmt">发表你的评论...</view>
+    </view>
+    <view class="tui-operation-right tui-right-flex tui-col-5">
+      <view bindtap="collection">
+        <tui-icon name="{{isCollection?'agree-fill':'agree'}}" size="29" color="{{isCollection?'#5677fc':'#444'}}"></tui-icon>
+      </view>
+      <view class="tui-operation-item" hover-class="opcity" hover-stay-time="150">
+        <button open-type="share" class="tui-share-btn">
+          <tui-icon name="share" size="31" color='#444'></tui-icon>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

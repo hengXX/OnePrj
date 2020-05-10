@@ -1,0 +1,18 @@
+<!--pages/message/message.wxml-->
+<view class="container">
+  <block wx:for="{{msgList}}" wx:key="{{item}}">
+    <view class="message-box" data-id="{{item.msgid}}" data-type="{{item.msgType}}" data-forumid="{{item.forumid}}" bindtap="clickMsg">
+      <view class="message-title">
+        <view class="message-title-content">{{item.msgTitle}}</view>
+        <view class="message-title-state" wx:if="{{item.msgState == 0}}"></view>
+      </view>
+      <view class="message-content">{{item.msgContent}}</view>
+      <view class="message-date">{{item.msgDate}}</view>
+    </view>
+  </block>
+
+
+  <!--加载loadding-->
+  <tui-nomore visible="{{!pullUpOn}}" text="{{nomoreText}}" bgcolor="#f7f7f7"></tui-nomore>
+  <!--加载loadding-->
+</view>
